@@ -1,0 +1,194 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@theme {
+    --color-corn-green: #4B5D34;
+    --color-corn-gold: #C9A227;
+    --color-corn-cream: #FAF3E0;
+    --color-corn-sage: #E4E9D8;
+    --color-corn-caramel: #B8863B;
+    --color-corn-dark: #2E3524;
+}
+
+/* =========================================================
+   PALET UI PANEL ADMIN
+   Mode terang = :root, mode gelap = .dark
+   Ubah warna cukup di dua blok ini.
+   ========================================================= */
+
+/* ---------- Mode terang ---------- */
+:root {
+    --ui-bg: #EEF0F6;
+    --ui-panel: #FFFFFF;
+    --ui-card: #FFFFFF;
+    --ui-border: #E2E5EF;
+    --ui-text: #1B1F31;
+    --ui-muted: #6B7089;
+    --ui-accent: #B8863B;
+    --ui-accent-soft: rgba(184, 134, 59, 0.14);
+    --ui-shadow: 0 1px 2px rgba(20, 23, 42, 0.06);
+}
+
+/* ---------- Mode gelap ---------- */
+.dark {
+    --ui-bg: #14172A;
+    --ui-panel: #181B2E;
+    --ui-card: #232842;
+    --ui-border: #313857;
+    --ui-text: #E8EAF3;
+    --ui-muted: #8F95B2;
+    --ui-accent: #E3B54A;
+    --ui-accent-soft: rgba(227, 181, 74, 0.16);
+    --ui-shadow: none;
+}
+
+/* =========================================================
+   HALAMAN LOGIN
+   ========================================================= */
+
+.fi-simple-layout {
+    background-image: url('/images/latar-belakang-login.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fi-simple-layout .fi-simple-main {
+    background-color: rgba(240, 250, 243, 0.55) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    max-width: 30rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .fi-simple-layout .fi-simple-main {
+    background-color: rgba(24, 27, 46, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.fi-simple-layout .fi-logo {
+    display: none;
+}
+
+.fi-simple-layout .fi-logo,
+.fi-simple-header-heading {
+    font-family: Georgia, 'Times New Roman', serif !important;
+    letter-spacing: 0.08em;
+    color: #1F4D3A !important;
+}
+
+.fi-simple-header-subheading::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: #C9A227;
+    margin: 8px auto 0;
+}
+
+.fi-simple-page img {
+    height: 15rem !important;
+    width: auto !important;
+}
+
+.fi-simple-layout .fi-section,
+.fi-simple-layout .fi-section-content-ctn {
+    background-color: #F7FAF6 !important;
+    border-color: #DCE4DA !important;
+}
+
+.fi-simple-layout .fi-input {
+    border-radius: 6px !important;
+    background-color: #F4F7F4 !important;
+}
+
+.dark .fi-simple-layout .fi-input {
+    background-color: #232842 !important;
+    color: #E8EAF3 !important;
+}
+
+.fi-simple-layout .fi-btn {
+    border-radius: 8px !important;
+}
+
+/* Tanda bintang wajib diisi disembunyikan */
+.fi-fo-field-wrp-label .text-danger-600 {
+    display: none !important;
+}
+
+/* =========================================================
+   PANEL ADMIN: LATAR, SIDEBAR, TOPBAR
+   ========================================================= */
+
+.fi-main {
+    background-color: var(--ui-bg) !important;
+}
+
+.fi-sidebar {
+    background-color: var(--ui-panel) !important;
+    border-right: 1px solid var(--ui-border) !important;
+}
+
+.fi-topbar {
+    background-color: var(--ui-panel) !important;
+    border-bottom: 1px solid var(--ui-border) !important;
+    box-shadow: none !important;
+}
+
+.fi-sidebar-item-label,
+.fi-sidebar-item-icon,
+.fi-topbar .fi-icon-btn-icon {
+    color: var(--ui-muted) !important;
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-btn {
+    background-color: var(--ui-accent-soft) !important;
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-label,
+.fi-sidebar-item.fi-active .fi-sidebar-item-icon {
+    color: var(--ui-accent) !important;
+}
+
+/* =========================================================
+   PANEL ADMIN: KARTU, TABEL, WIDGET, FORM
+   ========================================================= */
+
+.fi-section,
+.fi-ta-ctn,
+.fi-wi-stats-overview-stat {
+    background-color: var(--ui-card) !important;
+    border: 1px solid var(--ui-border) !important;
+    border-radius: 14px !important;
+    box-shadow: var(--ui-shadow) !important;
+}
+
+/* Kartu di halaman login tidak ikut palet panel */
+.fi-simple-layout .fi-section {
+    border-radius: 12px !important;
+}
+
+.fi-header-heading,
+.fi-section-header-heading,
+.fi-wi-stats-overview-stat-value {
+    color: var(--ui-text) !important;
+}
+
+.fi-ta-header-cell {
+    background-color: var(--ui-bg) !important;
+}
+
+.fi-main .fi-input-wrp {
+    background-color: var(--ui-bg) !important;
+    border-color: var(--ui-border) !important;
+}
+
+.fi-main .fi-input {
+    background-color: transparent !important;
+    color: var(--ui-text) !important;
+}
+
+/* Garis aksen warna di atas stat card */
+.fi-wi-stats-overview-stat:nth-child(1) { border-top: 3px solid #4F8EF7 !important; }
+.fi-wi-stats-overview-stat:nth-child(2) { border-top: 3px solid #E3B54A !important; }
+.fi-wi-stats-overview-stat:nth-child(3) { border-top: 3px solid #3DBE7A !important; }
+.fi-wi-stats-overview-stat:nth-child(4) { border-top: 3px solid #A78BFA !important; }
