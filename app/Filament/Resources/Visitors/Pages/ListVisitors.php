@@ -18,8 +18,8 @@ class ListVisitors extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('exportCsv')
-                ->label('Export CSV')
+            Action::make('exportExcel')
+                ->label('Export Excel')
                 ->icon('heroicon-o-arrow-down-tray')
                 ->color('success')
                 ->url(route('export.visitors'))
@@ -29,10 +29,10 @@ class ListVisitors extends ListRecords
                 ->using(function (array $data): Visitor {
                     return DB::transaction(function () use ($data) {
                         $visitor = Visitor::create([
-                            'name'         => $data['name'],
-                            'phone_number' => $data['phone_number'],
-                            'company'      => $data['company'] ?? null,
-                            'category'     => $data['category'] ?? 'reguler',
+                            'name'          => $data['name'],
+                            'phone_number'  => $data['phone_number'],
+                            'company'       => $data['company'] ?? null,
+                            'category'      => $data['category'] ?? 'reguler',
                             'photo_path'   => $data['photo_path'] ?? null,
                         ]);
 
